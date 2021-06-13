@@ -43,7 +43,7 @@ node {
       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/hello*.jar ./data" 
       
-      dockerImage = sh "docker.build("hello-world-java")"
+      dockerImage = sh docker.build("hello-world-java")
     }
    
     stage('Deploy Docker Image'){
