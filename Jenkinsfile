@@ -52,12 +52,6 @@ node {
     }
    
     stage('Deploy Docker Image'){
-      
-      // deploy docker image to nexus
-
-      echo "Docker Image Tag Name: ${dockerImageTag}"
-
-      sh "docker tag ${dockerImageName} ${dockerImageTag}"
-      sh "docker push ${dockerImageTag}"
+      sh "docker push ${dockerRepoUrl}/${dockerImageName}:latest"
     }
 }
