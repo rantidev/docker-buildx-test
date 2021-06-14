@@ -47,7 +47,7 @@ node {
             sh """
                docker buildx build \
 	       --platform linux/arm/v7 \
-	       -t ${dockerImageTag}
+	       -t "${dockerImageTag}"
 	       .
 	       """
       }
