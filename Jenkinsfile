@@ -42,7 +42,7 @@ node {
       sh "whoami"
       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/docker-buildx-test*.jar ./data" 
-	    
+      sh "pwd"
       script {
             sh """
                docker buildx build --platform linux/arm/v7 -t "${dockerImageTag}" .
