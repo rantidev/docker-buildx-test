@@ -45,7 +45,7 @@ node {
       sh "pwd"
       script {
             sh """
-               docker buildx build --platform linux/arm/v7 -t "${dockerImageTag}" .
+               docker buildx build --platform linux/arm/v7 -t "${dockerRepoUrl}/${dockerImageName}" .
 	       """
       }
      // dockerImage = sh docker.build("docker-buildx-test")
