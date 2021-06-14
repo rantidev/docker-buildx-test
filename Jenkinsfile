@@ -45,10 +45,7 @@ node {
 	    
       script {
             sh """
-               docker buildx build \
-	       --platform linux/arm/v7 \
-	       -t "${dockerImageTag}"
-	       .
+               docker buildx build --platform linux/arm/v7 -t "${dockerImageTag}" .
 	       """
       }
      // dockerImage = sh docker.build("docker-buildx-test")
