@@ -42,7 +42,7 @@ node {
       sh "whoami"
       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/docker-buildx-test*.jar ./data" 
-      
+      sh "docker buildx use testbuilder0"
       dockerImage = sh docker.build("docker-buildx-test")
     }
    
