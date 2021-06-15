@@ -53,7 +53,7 @@ node {
    
     stage('Deploy Docker Image'){
       //sh "docker push ${dockerRepoUrl}/${dockerImageName}:latest"
-      sh "docker run -name -p 8888:8080 ${dockerRepoUrl}/${dockerImageName}:latest"
+      sh "docker run --name ${dockerImageName} -p 8888:8080 ${dockerRepoUrl}/${dockerImageName}:latest"
     }
 	
     stage('Run Functinal And Performance Test'){
